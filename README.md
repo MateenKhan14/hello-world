@@ -94,3 +94,12 @@ public class ViewModelMapper : IViewModelMapper
 
             return ownerWindow;
         }
+        
+        // code for grid view
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="SeparatorBrush" Value="WhiteSmoke" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Height" Value="30" />
+        </Style>
