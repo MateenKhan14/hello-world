@@ -103,3 +103,25 @@ public class ViewModelMapper : IViewModelMapper
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="Height" Value="30" />
         </Style>
+         x:Name="MainWiew"      
+           Title="{Binding MainTitle}" Height="625" Width="935" WindowState="Maximized" 
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ Icon="/OpticalSimulation;component/opticalicon.ico"
+            av:RenderOptions.BitmapScalingMode="HighQuality">
+            
+             <Button ToolTip="Open" Name="OpenFileBtn" Style="{StaticResource ToolBarButtonColor}" Command="{Binding OpenFileCommand}">
+                <Image Source="../Resources/Images/Open.png" Name="OpenFileimg"/>
+            </Button>
+            
+             <Style x:Key="ToolBarButtonColor" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>    
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
